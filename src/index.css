@@ -1,13 +1,916 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+/* Example classes for different font weights */
+
+
+.noto-sans-light {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+  
+.noto-sans-regular {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+  
+.noto-sans-bold {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pridi-bold {
+    font-family: "Pridi", serif;
+    font-weight: 700;
+    font-style: normal;
 }
+
+
+
+body, html {
+    height: 100%;
+    margin: 0 px;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+
+
+
+.home_page {
+    position: relative; /* To position the overlay relative to this element */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.home_page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Adjust the opacity as needed */
+    z-index: 1; /* Ensure the overlay is below the navbar */
+    pointer-events: none; /* Ensure the overlay does not block any interactions */
+}
+
+
+
+
+
+
+.pr-heading {
+    position: relative;
+    font-family: "Pridi", serif;
+    font-weight: 700;
+    font-style: normal;
+    z-index: 1; /* Ensure the content is above the overlay */
+     /* Ensure the text is visible over the dark overlay */
+    text-align: center; /* Center the text */ /* Space between heading and search */
+    margin-top: 6%;
+}
+
+.searching_front {
+    position: relative;
+    z-index: 1; /* Ensure the search component is above the overlay */
+    width: 750px;
+    
+    height: 100px; /* Set the width to 900px */
+    display: flex;
+    justify-content: center; /* Center the search input */
+    border-radius: 20px;
+    margin: 0 auto; /* Center the container within its parent */
+   /* Optional: Add a background color to see the width change */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    outline: none;
+    border: none;
+}
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    margin-top: 0px;
+}
+  
+.app-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 30px;
+    color: black;
+  }
+  
+.highlight {
+    color: black;
+  }
+
+  .navbar{
+    margin-left: 55px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap:20px;
+  }
+  
+  .navbar li {
+  
+
+
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    padding:10px;
+    border:2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+
+  }
+  
+  .navbar a:hover {
+    background-color: orange;
+  }
+  
+  .content {
+     /* To offset the fixed header */
+    padding: 20px;
+  }
+
+.searching_front{
+    margin-top: 10%;
+}
+
+.header-btns{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 40%;
+}
+
+.header-btn{
+	width:160px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+    border-radius: 5px;
+	color:#ffffff;
+}
+
+.header-btn:hover{
+	background-color: transparent;
+    transition: all ease 0.5s;
+    color: #ffffff;    
+}
+
+
+.a-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.a-box{  
+    width:250px;
+    height: 400px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+
+
+
+#results MovieCard{
+    padding :"60px";
+}
+
+
+
+
+#presentaion{
+    padding-top: 30px;
+    width:100%;
+    height:768px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    text-align: center;
+}
+
+.pr-heading{
+    text-align: center;
+	font-family:'Lato';
+	width: 600px;
+	position: absolute;
+    left: 50%;
+	top: 55%;
+	transform: translate(-50%,-55%);
+}
+
+.pr-heading .details{
+    font-size: 23px;
+    font-weight: 2500;
+    color: #0e0d0d;
+}
+.pr-heading .details{
+    font-size: 1.3rem;
+}
+.pr-heading h1{
+	font-family:'Pridi';
+	font-size: 5rem;
+	margin:0px;
+	letter-spacing: 2px;
+	color:#ffffff;
+}
+.pr-btns{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 10%;
+}
+.pr-btn{
+	width:160px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    font-size: 1.4rem; 
+	color:#ffffff;
+}
+
+.menu-btn{
+  width:500px;
+  height: 50px;
+}
+
+#about {
+    position: relative;
+    width: 104.2%;
+    height: 101.5vh;
+    
+    display: flex;
+    align-items: center;
+
+    margin-top: -30px;
+    margin-left: -28px;
+    margin-bottom: -70px;
+
+
+    color: white; 
+    background-image: url("/src/images/Background.png");  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     /* Brown-colored overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is on top of the background image */
+    pointer-events: none; /* Ensure the overlay does not block any interactions */
+}
+
+#about * {
+    position: relative;
+    z-index: 2; /* Ensure the content is above the overlay */
+}
+
+.about-text{
+    width: 100%;
+    margin-top: 0px;
+    color: white;
+    list-style: circle;
+    margin-right: 270px;
+}
+
+.about-text h1{
+	font-size: 3rem;
+	color:black;
+  font-weight: 500;
+  margin-left: 545px;
+	padding: 0px;
+}
+
+.about-text p{
+  width: 50%;
+  margin-left: 420px;
+
+  margin-top: 20px;
+	font-size: 18px ;
+	color:white;
+    font-weight: 500;
+    
+	
+}
+
+.about-text button{
+    margin-top: 20px;
+	width: 140px;
+	height: 45px;
+	border-radius: 10px;
+	border: none;
+    outline: none;
+    color: #ffffff;
+	background-color:black;
+}
+
+.about-text button:hover{
+    box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.336);
+	background-color: rgb(0, 0, 0);
+    transition: all ease 0.3s;
+    color: #ffffff;
+}
+
+.signup {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+    color: black;  
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Hover effect */
+.signup:hover{
+    background-color: orange;
+}
+
+
+/* Active (click) effect */
+
+
+.movie-card-margin {
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.container-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: normal;
+    align-content: normal;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 1px;
+    width: 400px;
+    height:400px;
+}
+
+.card-bottom{
+    margin: 10px;
+    background-color: #029275;;
+    border-radius: 10px;
+    padding: 1px 10px 1px 10px;
+    font-size: 12px;
+  }
+
+  #admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 8px;
+    height: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #admin ul{
+    
+  }
+
+  #admin h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2 rem;
+    text-align: center;
+  }
+ 
+  .custom-input {
+    background-color: white;
+    color: white;
+    padding: 20px;
+    
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+    font-size: 1rem;
+  }
+  
+  .custom-button {
+    background-color: #50c878;
+    color: white;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .custom-image {
+    background-color: #02070c;
+    color: white;
+    padding: 12px;
+    
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-button:hover {
+    background-color: #45b069;
+  }
+ 
+#common_bg{
+    margin-bottom: -10px;
+    border-radius: 15px;
+    height:420px;
+    margin-left: 20px;
+    margin-right: -20px;
+    width: auto;
+    
+}
+
+#common_bg-login{
+    
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-right: -30px;
+    
+    height: 408px;
+
+}
+
+#contact{
+    width:99.1vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/src/images/Background.png");
+    margin-top: -34px;
+    margin-left: -30px;
+    margin-bottom: -50px;
+    margin-right: -30px;
+
+}
+#contact h1{
+    color: black;
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+#contact form{
+    width: 500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:200px;  
+}
+
+
+#contact form input,
+#contact form textarea{
+    width:80%;
+    height:40px;
+    margin:10px 0px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border:2px solid black
+}
+
+#contact form textarea{
+
+}
+
+#contact form input[type="submit"]{
+    font-size: 14px;
+    font-weight: 600;
+    width:80px;
+    padding:10px;
+    padding-bottom: 10px;
+    border:2px solid black;
+    color: black;
+    height:48px;
+
+    background-color: white;
+    border-radius: 5px;
+}
+
+#contact form input[type="submit"]:hover {
+    background-color: orange;
+}
+
+
+
+
+
+
+.slide{
+    width:500px;
+    height:400px;
+}
+
+#search {
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+}
+
+#search h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+ 
+
+/* Style for the search input field (if you want to add it) */
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.search-input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+}
+
+/* Style for the search button (if you want to add it) */
+
+
+/* styles.css */
+/* styles.css */
+#search-btn {
+    margin-top: 15px;
+    padding: 10px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-left: 640px;
+  }
+  
+  #search-btn:hover {
+    background-color: orange; /* More dramatic orange for hover effect */
+  }
+  
+  #search-btn:active {
+    background-color: darkorange; /* Slightly darker orange for active effect */
+    transform: scale(0.95); /* Scale down the button for pressing effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust shadow for pressed effect */
+  }
+  
+
+.container-card {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: normal;
+    align-content: normal;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+     /* Adjusted width to match JSX */
+    margin: 20px 30px; /* To ensure spacing between cards */
+}
+
+.card-left {
+    /* Removed unnecessary flex properties */
+    justify-content: center;
+    align-items: center;
+     /* Set width to match the image */
+    padding: 10px;
+}
+
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    color: #2d3436;
+    font-size: 12px;
+    justify-content: center;
+    margin-left: 20px;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+.card-details {
+    margin-left: 20px; /* Add space between the image and details */
+  }
+
+.card-role span,
+.card-salarie span {
+    margin: 2px 0px 2px 0px;
+    font-size: 12px;
+    color: #636e72;
+}
+
+
+#signup-b:hover {
+    background-color: #d17f4a; /* Darker shade of burlywood on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+#signup-b:active {
+    background-color: #ba7041; /* Even darker shade on active */
+    transform: scale(0.90); /* Slightly scale down the button on active */
+    box-shadow: none; /* Remove box-shadow on active state */
+}
+
+
+select {
+    
+
+    
+    border: 2px solid black;
+    padding: 6px 8px;
+    font-size: 14px;
+  
+    background-color: white;
+   
+    outline: black;
+    width: 200px; /* Adjust width as needed */
+    margin-top: 50px; /* Top margin added */
+    margin-bottom: 10px; /* Bottom margin added */
+  }
+  select option:hover {
+    background-color: orange; /* Change background color on hover */
+  }
+
+  .custom-select select::-ms-expand {
+    display: none; /* Remove the arrow on IE */
+  }
+ 
+  .custom-select select:focus {
+    outline: none; /* Remove focus outline */
+  }
+
+
+
+  
+#nameInput{
+    width:300px;
+    height:40px;
+    margin-bottom: 10px;
+}
+
+
+.Uploaders {
+    display: flex;
+    flex-direction: column; 
+    gap:10px;
+    /* Arrange items vertically */
+}
+
+#login-b {
+    color:black; /* White text color */
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border:2px solid black;
+    background-color: white;
+}
+
+#login-b:hover {
+    background-color:orange; /* Darker blue on hover */
+    /* Subtle shadow on hover */
+}
+
+#signup-b {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*#languageSelect{
+    margin-right: 1px;
+    padding:10px;
+    color: black;
+    border:2px solid black;
+    background-color: white;
+    margin-top: 45px;
+}*/
+.select-selected {
+    background-color: black;
+  }
+  
+
+.select-items {
+    position: absolute;
+    background-color: black;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+
+  /* Custom styling for the dropdown */ 
+
+.img-box{
+    height:400px;
+    width:400px;
+    position: relative;    
+}
+
+.success-image {
+
+z-index: 9999;
+
+
+
+  object-fit: cover;
+/* Ensure it's on top of other elements */
+  }
+
+  
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .app-title .logo {
+    width: 250px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: -40px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Keep the background transparent */
+  }
+  
+  .navbar ul li {
+    margin-left: 20px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .app-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    
+  
+    .navbar ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  
+    .logo {
+      width: 100px;
+      height: 15px; /* Reduce the size of the logo in mobile view */
+      margin-left: 0;
+    }
+  }
+  
+  .content {
+    padding: 10px;
+  }
+
+
+  @media (max-width: 768px) {
+    #common_bg-login {
+      padding: 20px;
+    }
+  
+    #common_bg-login img {
+      margin-top: 20px;
+      height: auto;
+      width: 200px; /* Reduce the size for smaller screens */
+      margin-left: 0; /* Center the image */
+    }
+  
+    #common_bg-login input[type="text"],
+    #common_bg-login input[type="password"] {
+      font-size: 14px;
+    }
+  
+    #login-b,
+    .signup {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+  
